@@ -1,20 +1,10 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
-
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
-
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
-
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
-
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+# GBB商品比较平台
+## 项目背景
+购物平台繁多，商品差别各异，在这种情况下用户想要找到一件性价比最高的产品需要花费的时间与最后的收获无疑是不匹配的，本项目正是为了解决该问题而诞生。
+## 项目简介
+该平台根据用户输入提供各大购物平台商品的信息比较结果与推荐结果。
+## 项目结构
+└─src
+    ├─Algo 比较与推荐算法
+    ├─Server 服务端 
+    └─View 客户端
