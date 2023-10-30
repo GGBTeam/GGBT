@@ -20,16 +20,24 @@
         flex-wrap: wrap;
         width: 100vw;
         height: calc(100vh - 74px);
+        overflow-y: auto;
         .left {
             height: 100%;
             width: 120px;
         }
         .body {
             box-sizing: border-box;
-            width: calc(100% - 120px);
-            height: 100%;
-            padding-left: 10px;
+            width: 800px;
+            height: auto;
+            padding:10px 10px 0px 10px;
+            margin-right: 10px;
             background-color: #fff;
+        }
+        .right {
+            width: 800px;
+            padding-top: 10px;
+            background-color: #fff;
+            text-align: center;
         }
     }
 }
