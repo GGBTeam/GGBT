@@ -23,8 +23,6 @@ const data = dataAll.flatMap((item)=>([
     }
 ]))
 
-console.log(data);
-
 
 function renderBarChart(container: any, data: any) { // 渲染条形图
     const chart = new Chart({
