@@ -19,13 +19,13 @@ def get_data():
     return "1349"
 
 
-@app.route('/login', methods=['GET', 'POST'])
-def login():
+@app.route('/Search', methods=['GET', 'POST'])
+def search():
     if request.method == 'POST':
         print(request.form)
         print(request.json)
-        name = request.json.get('name')
-        if name == "jackChen":
+        key = request.json.get('Key')
+        if key == "jackChen":
             return "1349 from post"
         return dict(name='JackChen from post', data='1349')
     else:

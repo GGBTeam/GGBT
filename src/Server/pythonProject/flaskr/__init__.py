@@ -66,4 +66,3 @@ def create_app(test_config=None):
             return dict(name='JackChen from get', data='1349')
 
     return app
-
