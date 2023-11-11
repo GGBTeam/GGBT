@@ -1,6 +1,8 @@
 import './index.scss'
 import logo from '../../assets/logo16_9.png'
 import SearchBar from '../../components/SearchBar'
+import Compare from '../../components/Compare'
+import Analysis from '../../components/Analysis'
 
 export default function Result() {
   return (
@@ -11,7 +13,12 @@ export default function Result() {
         </div>
         <div className="middle">
             <div className="left"></div>
-            <div className="body"></div>
+            <div className="body">
+				<Compare/>
+            </div>
+			<div className="right">
+				<Analysis/>
+			</div>
         </div>
     </div>
   )
