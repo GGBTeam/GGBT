@@ -1,4 +1,4 @@
-from keywords import extract_keywords
+from search.keywords import extract_keywords
 import os
 import mysql.connector
 

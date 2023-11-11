@@ -8,22 +8,21 @@
 
 ### 使用方法
 
-1. 将search包复制到项目根目录下。
-2. 导入search包
+- 将search文件夹复制到项目根目录
+- 导入search包
 
 ```python
-from search import *
+from search.search_engine import SearchService
 ```
 
-3. 实例SearchService类
+- 实例SearchService类
 
 ```python
 search_service = SearchService()
 ```
 
-4. 调用SearchService对象的get_data_by_keyword方法，传入三个参数分别为：
-
-- keyword：用户输入的检索文本；
-- page_size：一个页面请求的数据条数（eg：商品页第一页包含20条商品，该参数即为20）；
-- page_num：当前页码（初始页码为1）。
+- 调用SearchService对象的get_data_by_keyword方法，传入三个参数分别为：
+  - keyword：用户输入的检索文本；
+  - page_size：一个页面请求的数据条数（eg：商品页第一页包含20条商品，该参数即为20）；
+  - page_num：当前页码（初始页码为1）。
 
