@@ -1,5 +1,7 @@
 from flask import Flask
 from flask import request
+from gevent import pywsgi
+from search.search_engine import SearchService
 
 app = Flask(__name__)
 
@@ -21,6 +23,7 @@ def get_data():
 
 @app.route('/Search', methods=['GET', 'POST'])
 def search():
+    search_service = SearchService()
     if request.method == 'POST':
         print(request.form)
         print(request.json)
@@ -29,9 +32,12 @@ def search():
             return "1349 from post"
         return dict(name='JackChen from post', data='1349')
     else:
-        print(request.form)
-        print(request.json)
         name = request.args.get('name', '')
-        if name == "JackChen":
-            return "1349 from get"
-        return dict(name='JackChen from get', data='1349')
+        s = search_service.get_data_by_keyword(str(name), 20, 1)
+        # return dict(name='JackChen from get', data='1349')
+        return s
+
+
+if __name__ == '__main__':
+    server = pywsgi.WSGIServer(('127.0.0.1', 8080), app)
+    server.serve_forever()
