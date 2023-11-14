@@ -7,7 +7,7 @@ class SearchService:
     def __init__(self):
         config = {
             'user': 'root',
-            'password': 'Cj20031349',
+            'password': 'Cj@20031349',
             'host': '127.0.0.1',
             'database': 'search_engine'
         }
