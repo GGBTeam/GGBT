@@ -21,7 +21,7 @@ class SearchService:
         return self.cursor.fetchone()
 
     def get_data_by_split(self, sql, page_size, offset):  # data表中查询该页的全部结果
-        sql_getdata = ("SELECT url, title, id FROM data WHERE id IN ( "
+        sql_getdata = ("SELECT id, title, url, price, comment_count, store_name, picture, platform FROM data WHERE id IN ( "
                        "SELECT db.data_id FROM ( "
                        "SELECT data_id FROM ( "
                        "{}"
@@ -33,7 +33,7 @@ class SearchService:
                        ")").format(sql)
         self.cursor.execute(sql_getdata, (page_size, offset))
         # 将查询结果组装成字典
-        columns = ['url', 'title', 'id']
+        columns = ['id', 'title', 'url', 'price', 'comment_count', 'store_name', 'picture', 'platform']
         datas_tuple = self.cursor.fetchall()
         return [dict(zip(columns, data_tuple)) for data_tuple in datas_tuple]
 
