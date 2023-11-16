@@ -1,0 +1,2 @@
+jieba~=0.42.1
+mysql-connector-python~=8.0.32
