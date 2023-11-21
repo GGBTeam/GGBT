@@ -9,6 +9,7 @@
         border-bottom: 1px solid rgba(0,0,0,.2);
         .logo {
             margin: 0 10px 0 10px;
+            cursor: pointer;
             img {
                 width: 100px;
             }
@@ -23,29 +24,32 @@
         height: calc(100vh - 74px);
         overflow-y: auto;
         .left {
-            height: 650px;
             width: 120px;
         }
         .body {
             box-sizing: border-box;
             width: 800px;
-            height: 650px;
             padding:10px 10px 0px 10px;
             margin-right: 10px;
             background-color: #fff;
         }
         .right {
+            box-sizing: border-box;
             width: 800px;
-            height: 650px;
             padding-top: 10px;
-            margin-right: 0px;
             background-color: #fff;
             text-align: center;
         }
     }
 }
 
-@media screen and (max-width: 2000px) {
+@media screen and (max-width: 1740px) {
+    .left {
+        height: 650px;
+    }
+    .body {
+        height: 650px;
+    }
     .right {
         margin-left: 120px;
         height: 650px;
