@@ -14,12 +14,16 @@ export default function Compare() {
 
     // const { result } = useContext(ResContext)!;
     const result = formData;
-    
 
+    const rateFormat = (part: number, all: number): string => {
+        const rate = (part / all).toFixed(2);
+        return `${rate} %`
+    }
+    
   return (
     <div className='Compare'>
         <List
-            grid={{ gutter: 16, column: 2 }}
+            grid={{ gutter: 16, column: 5 }}
             dataSource={result}
             renderItem={(item) => (
             <List.Item>
@@ -32,7 +36,7 @@ export default function Compare() {
                     <Card.Grid style={gridStyle}><strong>店铺：</strong>{item.store_name} </Card.Grid>
                     <Card.Grid style={gridStyle}>
                         <strong>评价：</strong>{item.comment_count}<br/>
-                        {/* <strong>好评率：</strong>{item.evaluate.rate} */}
+                        <strong>好评率：</strong>{rateFormat(item.comment_pos,item.comment_count)}
                     </Card.Grid>
                     <Card.Grid style={gridStyle}><a href={`${item.url}`}>商品详情</a></Card.Grid>
                 </Card>

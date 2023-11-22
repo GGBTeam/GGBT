@@ -93,7 +93,7 @@ export const dataForCompare = [
 
 export const formData = [
   {
-      "comment_count": "5万+",
+      "comment_count": 50000,
       "comment_pos": 100,
       "comment_ave": 200,
       "comment_bad": 300,
@@ -106,7 +106,7 @@ export const formData = [
       "url": "https://item.jd.com/100067652158.html"
   },
   {
-      "comment_count": "38",
+      "comment_count": 38,
       "comment_pos": 144,
       "comment_ave": 250,
       "comment_bad": 307,
@@ -119,7 +119,7 @@ export const formData = [
       "url": "https://item.jd.com/10076365943235.html"
   },
   {
-      "comment_count": "79",
+      "comment_count": 79,
       "comment_pos": 110,
       "comment_ave": 205,
       "comment_bad": 330,
@@ -132,7 +132,7 @@ export const formData = [
       "url": "https://item.jd.com/10086564588905.html"
   },
   {
-      "comment_count": "5",
+      "comment_count": 5,
       "comment_pos": 160,
       "comment_ave": 260,
       "comment_bad": 360,
@@ -145,7 +145,7 @@ export const formData = [
       "url": "https://product.suning.com/0070067921/101451384.html"
   },
   {
-      "comment_count": "500+",
+      "comment_count": 500,
       "comment_pos": 500,
       "comment_ave": 500,
       "comment_bad": 500,
@@ -158,7 +158,7 @@ export const formData = [
       "url": "https://item.jd.com/10075200884948.html"
   },
   {
-      "comment_count": "500+",
+      "comment_count": 500,
       "comment_pos": 108,
       "comment_ave": 208,
       "comment_bad": 308,
@@ -171,7 +171,7 @@ export const formData = [
       "url": "https://item.jd.com/10075200884956.html"
   },
   {
-      "comment_count": "200+",
+      "comment_count": 200,
       "comment_pos": 133,
       "comment_ave": 233,
       "comment_bad": 333,
