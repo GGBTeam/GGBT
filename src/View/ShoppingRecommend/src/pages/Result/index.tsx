@@ -20,10 +20,11 @@ export default function Result() {
             <div className="logo" onClick={toHome}><img src={logo} alt="GGB"/></div>
             <SearchBar></SearchBar>
         </div>
-        <div className="middle">
-            <div className="left"></div>
-            <div className="body"><Compare/></div>
-            <div className="right"><Analysis/></div>
+        <div className="analysisBar">
+          <Analysis/>
+        </div>
+        <div className="compareBar">
+          <Compare/>
         </div>
     </div>
   )

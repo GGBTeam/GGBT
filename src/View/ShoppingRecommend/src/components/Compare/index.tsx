@@ -2,7 +2,8 @@ import { useContext } from 'react';
 import './index.scss'
 import { ResContext } from '../../App';
 import { Card, List } from 'antd';
-import logo from '../../assets/logo1_1.png'
+import logo from '../../assets/logo_square.png'
+import { formData } from '../../data/data';
 
 const gridStyle: React.CSSProperties = {
     width: '100%',
@@ -11,8 +12,8 @@ const gridStyle: React.CSSProperties = {
 
 export default function Compare() {
 
-    const { result } = useContext(ResContext)!;
-    console.log('result->', result);
+    // const { result } = useContext(ResContext)!;
+    const result = formData;
     
 
   return (
@@ -29,8 +30,6 @@ export default function Compare() {
                     <Card.Grid style={gridStyle}><strong>价格：</strong>{item.price} 元</Card.Grid>
                     <Card.Grid style={gridStyle}><strong>平台：</strong>{item.platform} </Card.Grid>
                     <Card.Grid style={gridStyle}><strong>店铺：</strong>{item.store_name} </Card.Grid>
-                    {/* <Card.Grid style={gridStyle}><strong>配送地址：</strong>{item.address}</Card.Grid>
-                    <Card.Grid style={gridStyle}><strong>配送时间：</strong>{item.delivery}</Card.Grid> */}
                     <Card.Grid style={gridStyle}>
                         <strong>评价：</strong>{item.comment_count}<br/>
                         {/* <strong>好评率：</strong>{item.evaluate.rate} */}

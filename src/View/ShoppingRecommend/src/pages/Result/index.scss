@@ -6,6 +6,7 @@
         align-items: center;
         width: 100%;
         padding-top: 10px;
+        margin-bottom: 10px;
         border-bottom: 1px solid rgba(0,0,0,.2);
         .logo {
             margin: 0 10px 0 10px;
@@ -14,44 +15,5 @@
                 width: 100px;
             }
         }
-    }
-
-    .middle {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: start;
-        width: 100vw;
-        height: calc(100vh - 74px);
-        overflow-y: auto;
-        .left {
-            width: 120px;
-        }
-        .body {
-            box-sizing: border-box;
-            width: 800px;
-            padding:10px 10px 0px 10px;
-            margin-right: 10px;
-            background-color: #fff;
-        }
-        .right {
-            box-sizing: border-box;
-            width: 800px;
-            padding-top: 10px;
-            background-color: #fff;
-            text-align: center;
-        }
-    }
-}
-
-@media screen and (max-width: 1740px) {
-    .left {
-        height: 650px;
-    }
-    .body {
-        height: 650px;
-    }
-    .right {
-        margin-left: 120px;
-        height: 650px;
     }
 }
