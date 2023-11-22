@@ -1,25 +1,34 @@
-import './index.scss'
 import ReactECharts from 'echarts-for-react';
 import { formData } from '../../data/data';
+import './index.scss'
 
 // 价格排序
 const sortData = formData.sort((item1, item2)=>(item1.price > item2.price ? -1 : 1))
 
+// 好评
 const posData = sortData.map(item => item.comment_pos)
 
+// 中评
 const aveData = sortData.map(item => item.comment_ave)
 
+// 差评
 const badData = sortData.map(item => item.comment_bad)
 
+// 价格
 const priceData = sortData.map(item => item.price)
 
+// 标题
 const titleData = sortData.map(item => item.title)
 
 
-export default function ChartE() {
+export default function ReviewPrice() {
 
     const getOption = () => {
         const option = {
+            title: {
+                text: '价格 用户评价',
+                left: 40
+            },
             tooltip: { // 提示框
                 trigger: 'axis',
                 axisPointer: {
@@ -30,7 +39,8 @@ export default function ChartE() {
                 }
             },
             legend: { // 图例
-                data: ['pos', 'ave', 'bad', 'price']
+                data: ['pos', 'ave', 'bad', 'price'],
+                right: 20
             },
             xAxis: [ // x轴
                 {
@@ -90,8 +100,6 @@ export default function ChartE() {
     }
 
   return (
-    <div className='ChartE'>
-        <ReactECharts option={getOption()} />
-    </div>
+    <ReactECharts option={getOption()} className='ReviewPrice_E'/>
   )
 }

@@ -1,11 +1,15 @@
 import './index.scss'
-import ChartE from '../ChartE'
+import ReviewPrice from '../ReviewPrice'
+import Platform from '../Platform'
 
 export default function Analysis() {
   return (
     <div className='Analysis'>
-        <div className="priceAndEva">
-            <ChartE></ChartE>
+        <div className="ReviewPrice">
+            <ReviewPrice></ReviewPrice>
+        </div>
+        <div className="Platform">
+            <Platform></Platform>
         </div>
     </div>
   ) 

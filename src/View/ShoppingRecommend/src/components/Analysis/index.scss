@@ -1,9 +1,17 @@
 .Analysis {
+    display: flex;
+    justify-content: space-around;
     margin-bottom: 10px;
+    padding: 20px 0;
     height: 100%;
     background-color: #fff;
-    .priceAndEva {
+    .ReviewPrice {
         height: 100%;
-        width: 48%;
+        width: 50%;
+    }
+
+    .Platform {
+        height: 100%;
+        width: 50%;
     }
 }
