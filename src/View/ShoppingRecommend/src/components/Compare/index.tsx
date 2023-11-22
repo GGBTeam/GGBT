@@ -12,8 +12,8 @@ const gridStyle: React.CSSProperties = {
 
 export default function Compare() {
 
-    // const { result } = useContext(ResContext)!;
-    const result = formData;
+    const { result } = useContext(ResContext)!;
+    // const result = formData;
 
     const rateFormat = (part: number, all: number): string => {
         const rate = (part / all).toFixed(2);

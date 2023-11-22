@@ -16,8 +16,9 @@ export default function SearchBar() {
     const onSearch = (value: any) => {
       if(!value) return ;
       navigate('/Result');
-      axios.get(`http://yyjbye.natappfree.cc/Search?name=${value}`).then(
+      axios.get(`http://5e5za4.natappfree.cc/Search?name=${value}`).then(
         res => {
+          console.log('res->', res.data.result);
           setResult(res.data.result)
         },
         err => {
