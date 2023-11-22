@@ -1,22 +1,27 @@
+import { useContext } from 'react'
 import { useNavigate } from 'react-router-dom';
-import './index.scss'
 import axios from 'axios';
-import { Input} from 'antd';
+import { Input } from 'antd';
 const { Search } = Input;
+import './index.scss'
+import { ResContext } from '../../App'
+
 
 export default function SearchBar() {
 
     const navigate = useNavigate();
+    const { setResult } = useContext(ResContext)!
 
+    // 搜索处理
     const onSearch = (value: any) => {
+      if(!value) return ;
       navigate('/Result');
-      axios.get(`https://funky-amoeba-steady.ngrok-free.app/Search?name=${value}`).then(
+      axios.get(`http://yyjbye.natappfree.cc/Search?name=${value}`).then(
         res => {
-          console.log('res->', res);
+          setResult(res.data.result)
         },
         err => {
           console.log('err->', err);
-          
         }
       )
     } 
