@@ -9,45 +9,21 @@
         border-bottom: 1px solid rgba(0,0,0,.2);
         .logo {
             margin: 0 10px 0 10px;
+            cursor: pointer;
             img {
                 width: 100px;
             }
         }
     }
 
-    .middle {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: start;
-        width: 100vw;
-        height: calc(100vh - 74px);
-        overflow-y: auto;
-        .left {
-            height: 650px;
-            width: 120px;
-        }
-        .body {
-            box-sizing: border-box;
-            width: 800px;
-            height: 650px;
-            padding:10px 10px 0px 10px;
-            margin-right: 10px;
-            background-color: #fff;
-        }
-        .right {
-            width: 800px;
-            height: 650px;
-            padding-top: 10px;
-            margin-right: 0px;
-            background-color: #fff;
-            text-align: center;
-        }
+    .analysisBar {
+        margin: 0 120px 50px 120px;
+        height: 450px;
     }
-}
 
-@media screen and (max-width: 2000px) {
-    .right {
-        margin-left: 120px;
-        height: 650px;
+    .compareBar {
+        margin: 0 120px 0 120px;
+        padding: 15px;
+        background-color: #fff;
     }
 }
