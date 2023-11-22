@@ -1,3 +1,5 @@
+import { useContext } from 'react'
+import { ResContext } from '../../App';
 import ReactECharts from 'echarts-for-react';
 import './index.scss'
 import { formData, Data } from '../../data/data';
@@ -16,17 +18,19 @@ const platformStatistics = (data: Data[]): CountResult  => {
   }, {} as CountResult);
 }
 
-// 平台数量统计
-const platformCount = platformStatistics(formData);
-
-const platformType = Object.keys(platformCount)
-
-const chartData = platformType.map(item => ({
-    name: item,
-    value: platformCount[item]
-}))
-
 export default function Platform() {
+
+  const { result } = useContext(ResContext)!;
+
+  // 平台数量统计
+  const platformCount = platformStatistics(result);
+
+  const platformType = Object.keys(platformCount)
+
+  const chartData = platformType.map(item => ({
+      name: item,
+      value: platformCount[item]
+  }))
 
     const getOption = () => {
         return {

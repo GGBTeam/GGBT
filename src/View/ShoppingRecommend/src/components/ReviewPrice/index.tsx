@@ -1,27 +1,32 @@
+import { useContext } from 'react'
+import { ResContext } from '../../App';
 import ReactECharts from 'echarts-for-react';
 import { formData } from '../../data/data';
 import './index.scss'
 
-// 价格排序
-const sortData = formData.sort((item1, item2)=>(item1.price > item2.price ? -1 : 1))
-
-// 好评
-const posData = sortData.map(item => item.comment_pos)
-
-// 中评
-const aveData = sortData.map(item => item.comment_ave)
-
-// 差评
-const badData = sortData.map(item => item.comment_bad)
-
-// 价格
-const priceData = sortData.map(item => item.price)
-
-// 标题
-const titleData = sortData.map(item => item.title)
-
-
 export default function ReviewPrice() {
+
+    const { result } = useContext(ResContext)!;
+    // 价格排序
+    const sortData = result.sort((item1, item2)=>(item2.price - item1.price))
+
+    console.log('sortData->', sortData);
+    
+
+    // 好评
+    const posData = sortData.map(item => item.comment_pos)
+
+    // 中评
+    const aveData = sortData.map(item => item.comment_ave)
+
+    // 差评
+    const badData = sortData.map(item => item.comment_bad)
+
+    // 价格
+    const priceData = sortData.map(item => item.price)
+
+    // 标题
+    const titleData = sortData.map(item => item.title)
 
     const getOption = () => {
         const option = {
