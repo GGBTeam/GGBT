@@ -1,12 +1,12 @@
 import './index.scss'
-import ChartStackLine from '../ChartStackLine'
+import ChartE from '../ChartE'
 
 export default function Analysis() {
   return (
     <div className='Analysis'>
         <div className="delivery"></div>
         <div className="priceAndEva">
-            <ChartStackLine/>
+            <ChartE></ChartE>
         </div>
     </div>
   ) 
