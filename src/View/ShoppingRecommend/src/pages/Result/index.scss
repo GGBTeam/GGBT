@@ -6,7 +6,6 @@
         align-items: center;
         width: 100%;
         padding-top: 10px;
-        margin-bottom: 10px;
         border-bottom: 1px solid rgba(0,0,0,.2);
         .logo {
             margin: 0 10px 0 10px;
@@ -18,8 +17,8 @@
     }
 
     .analysisBar {
-        margin: 0 120px;
-        height: 400px;
+        margin: 0 120px 50px 120px;
+        height: 450px;
     }
 
     .compareBar {

@@ -1,6 +1,30 @@
 import ReactECharts from 'echarts-for-react';
 import './index.scss'
-import { formData } from '../../data/data';
+import { formData, Data } from '../../data/data';
+
+type CountResult = Record<string, number>;
+
+const platformStatistics = (data: Data[]): CountResult  => {
+  return data.reduce((acc, cur) => {
+    const platform = cur.platform;
+    if (acc[platform]) {
+      acc[platform]++;
+    } else {
+      acc[platform] = 1;
+    }
+    return acc;
+  }, {} as CountResult);
+}
+
+// 平台数量统计
+const platformCount = platformStatistics(formData);
+
+const platformType = Object.keys(platformCount)
+
+const chartData = platformType.map(item => ({
+    name: item,
+    value: platformCount[item]
+}))
 
 export default function Platform() {
 
@@ -17,16 +41,7 @@ export default function Platform() {
             legend: { // 图例
               left: 'center',
               top: 'bottom',
-              data: [
-                'rose1',
-                'rose2',
-                'rose3',
-                'rose4',
-                'rose5',
-                'rose6',
-                'rose7',
-                'rose8'
-              ]
+              data: platformType
             },
             series: [
               {
@@ -42,16 +57,7 @@ export default function Platform() {
                     show: true
                   }
                 },
-                data: [
-                  { value: 40, name: 'rose 1' },
-                  { value: 33, name: 'rose 2' },
-                  { value: 28, name: 'rose 3' },
-                  { value: 22, name: 'rose 4' },
-                  { value: 20, name: 'rose 5' },
-                  { value: 15, name: 'rose 6' },
-                  { value: 12, name: 'rose 7' },
-                  { value: 10, name: 'rose 8' }
-                ]
+                data: chartData
               }
             ]
           };
