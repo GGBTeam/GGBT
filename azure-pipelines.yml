@@ -10,4 +10,4 @@ trigger:
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'nugetpack'
-    publishLocation: Container
+    publishLocation: 'Container'
