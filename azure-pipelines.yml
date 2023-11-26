@@ -6,9 +6,6 @@
 trigger:
 - dev
 
-- task: NodeTaskRunnerInstaller@0
-  inputs:
-    nodeVersion: '10'
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
