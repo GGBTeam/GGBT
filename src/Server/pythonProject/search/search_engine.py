@@ -12,7 +12,7 @@ class SearchService:
             'database': 'search_engine'
         }
         self.cnx = mysql.connector.connect(**config)
-        self.cursor = self.cnx.cursor()
+        self.cursor = self.cnx.cursor(buffered=True)
         self.main_path = os.path.dirname(__file__)
 
     def get_one_seg(self, word):  # segment表中查询一个分词的结果
