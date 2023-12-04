@@ -1,17 +1,73 @@
 from search.keywords import extract_keywords
 import os
 import mysql.connector
+import time
+# import paramiko
+# import pymysql
 
 
 class SearchService:
     def __init__(self):
+        # ssh_config = {
+        #     'hostname': '121.37.45.56',
+        #     'port': 22,
+        #     'username': 'root',
+        #     'password': 'Cj@20031349'
+        # }
+
         config = {
             'user': 'root',
-            'password': 'Cj@20031349',
+            'passwd': 'Jack@5204',
             'host': '127.0.0.1',
             'database': 'search_engine'
         }
+        # 创建SSH连接
+        # self.ssh_client = paramiko.SSHClient()
+        # self.ssh_client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+        # self.ssh_client.connect(**ssh_config)
+        # 创建数据库连接
         self.cnx = mysql.connector.connect(**config)
+        # self.cnx = pymysql.connect(**config)
+        self.cursor = self.cnx.cursor(buffered=True)
+        self.main_path = os.path.dirname(__file__)
+
+    def __del__(self):
+        # 关闭数据库连接和SSH连接
+        if hasattr(self, 'cursor') and self.cursor:
+            self.cursor.close()
+        if hasattr(self, 'cnx') and self.cnx:
+            self.cnx.close()
+        # if hasattr(self, 'ssh_client') and self.ssh_client:
+        #     self.ssh_client.close()
+
+    def execute_query(self, query):
+        try:
+            self.cursor.execute(query)
+        except (mysql.connector.errors.InterfaceError, mysql.connector.errors.OperationalError) as e:
+            # 捕获可能表示连接丢失的特定异常
+            print(f"执行查询时出错：{e}")
+            print("尝试重新连接...")
+            self.reconnect()
+            # 在重新连接后重试查询
+            self.cursor.execute(query)
+        except mysql.connector.errors.DatabaseError as e:
+            # 捕获数据库错误，例如过载
+            print(f"数据库错误：{e}")
+            print("等待一段时间后重试...")
+            time.sleep(10)  # 可以根据需要调整等待时间
+            self.execute_query(query)  # 递归调用以重试查询
+
+    def reconnect(self):
+        # 重新建立连接
+        config = {
+            'user': 'root',
+            'passwd': 'Jack@5204',
+            'host': '127.0.0.1',
+            'database': 'search_engine'
+        }
+        # 创建数据库连接
+        self.cnx = mysql.connector.connect(**config)
+        # self.cnx = pymysql.connect(**config)
         self.cursor = self.cnx.cursor(buffered=True)
         self.main_path = os.path.dirname(__file__)
 
